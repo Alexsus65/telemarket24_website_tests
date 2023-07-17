@@ -9,10 +9,6 @@ from base.base_class import Base
 
 class  Cancel_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
     #Locator
 
     orders = "//*[@id='mm-0']/div[2]/div[10]/table[1]/tbody/tr/td/a"
@@ -46,14 +42,13 @@ class  Cancel_page(Base):
 
      # Methods
 
+    """Отмена заказа"""
+
     def deleting_order(self):
         self.get_current_url()
         self.click_orders()
-        time.sleep(2)
         self.click_cancel_order1()
-        time.sleep(2)
         self.click_cancel_order2()
-        time.sleep(2)
         self.get_screenshot()
 
 

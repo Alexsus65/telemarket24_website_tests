@@ -8,6 +8,7 @@ from pages.checkout_page import Checkout_page
 from pages.login_page import Login_page
 from pages.main_page import Main_page
 
+"""Smoke-тест интернет магазина ТЕЛЕМАРКЕТ24"""
 
 def test_buy_product_1(set_group):
     options = Options()
@@ -19,17 +20,27 @@ def test_buy_product_1(set_group):
 
     print("Start Test 1")
 
+    """Авторизация на сайте"""
+
     login = Login_page(driver)
     login.authorization()
+
+    """Выставление параметризированного поиска через фильтры каталога"""
 
     search = Main_page(driver)
     search.select_product_1()
 
+    """Подтверждение заказа в корзине"""
+
     cart = Cart_page(driver)
     cart.product_confirmation()
 
+    """Оформление заказа"""
+
     checkout = Checkout_page(driver)
     checkout.formalization()
+
+    """Отмена заказа"""
 
     delete = Cancel_page(driver)
     delete.deleting_order()

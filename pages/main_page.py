@@ -10,10 +10,6 @@ from base.base_class import Base
 
 class  Main_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
     #Locator
 
     select_menu_smart_watch = "//nav[@id='cont_catalog_menu_rIpOz9']"
@@ -85,6 +81,8 @@ class  Main_page(Base):
         print("Click select checkout")
 
     # Methods
+
+    """Выставление параметризированного поиска через фильтры каталога"""
 
     def select_product_1(self):
         self.get_current_url()

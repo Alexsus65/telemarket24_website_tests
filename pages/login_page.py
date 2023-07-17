@@ -10,10 +10,6 @@ class Login_page(Base):
 
     url = 'https://telemarket24.ru/'
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
     #Locator
 
     account_menu = "//div[@id='account-menu-toggler']"
@@ -66,6 +62,8 @@ class Login_page(Base):
         print("Click login")
 
      # Methods
+
+    """Авторизация на сайте"""
 
     def authorization(self):
         self.driver.get(self.url)

@@ -9,10 +9,6 @@ from base.base_class import Base
 
 class  Checkout_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
     #Locator
 
     onwards_1_button = "//*[@id='bx-soa-region']/div[2]/div[3]/div/a"
@@ -94,6 +90,8 @@ class  Checkout_page(Base):
 
     # Methods
 
+    """Оформление заказа"""
+
     def formalization(self):
         self.get_current_url()
         self.click_onwards_1_button()
@@ -112,10 +110,10 @@ class  Checkout_page(Base):
         time.sleep(2)
         # self.assert_word(self.get_model_word(), "Часы Apple Watch Series 8 GPS 45mm Midnight  Aluminum Case/Midnight Sport Band (MNUJ3)")
         # time.sleep(2)
-        self.assert_word(self.get_price_word(), "38 370")
+        self.assert_word(self.get_price_word(), "37 950")
         time.sleep(2)
         self.click_onwards_5_button()
-        time.sleep(5)
+        time.sleep(2)
         self.get_screenshot()
 
 
