@@ -72,7 +72,7 @@ class Login_page(Base):
         self.click_account_menu()
         self.click_inlet()
         self.input_email("igsergeev@inbox.ru")
-        self.input_password("Is040176")
+        self.input_password("********")
         self.click_login()
         self.click_account_menu()
         self.assert_word(self.get_profile_word(), "Мой кабинет")
