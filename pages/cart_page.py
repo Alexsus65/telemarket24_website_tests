@@ -1,10 +1,12 @@
 import time
 
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilites.logger import Logger
 
 
 class  Cart_page(Base):
@@ -29,8 +31,11 @@ class  Cart_page(Base):
     """Подтверждение заказа в корзине"""
 
     def product_confirmation(self):
-        self.get_current_url()
-        self.click_checkout_button()
+        with allure.step("product_confirmation"):
+            Logger.add_start_step(method='product_confirmation')
+            self.get_current_url()
+            self.click_checkout_button()
+            Logger.add_end_step(url=self.driver.current_url, method='product_confirmation')
 
 
 

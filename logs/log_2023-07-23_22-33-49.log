@@ -1,0 +1,55 @@
+
+-----
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2023-07-23 22:33:51.823823
+Start name method: authorization
+
+End time: 2023-07-23 22:34:00.448316
+End name method: authorization
+URL: https://telemarket24.ru/?login=yes
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2023-07-23 22:34:00.448316
+Start name method: select_product_1
+
+End time: 2023-07-23 22:34:29.665987
+End name method: select_product_1
+URL: https://telemarket24.ru/personal/cart/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2023-07-23 22:34:29.665987
+Start name method: product_confirmation
+
+End time: 2023-07-23 22:34:31.346083
+End name method: product_confirmation
+URL: https://telemarket24.ru/personal/order/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2023-07-23 22:34:31.347083
+Start name method: formalization
+
+End time: 2023-07-23 22:34:50.968206
+End name method: formalization
+URL: https://telemarket24.ru/personal/order/?ORDER_ID=579796
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2023-07-23 22:34:50.969206
+Start name method: deleting_order
+
+End time: 2023-07-23 22:34:54.832427
+End name method: deleting_order
+URL: https://telemarket24.ru/personal/orders/
+
+-----

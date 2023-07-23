@@ -1,3 +1,5 @@
+import allure
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -10,6 +12,7 @@ from pages.main_page import Main_page
 
 """Smoke-тест интернет магазина ТЕЛЕМАРКЕТ24"""
 
+@allure.description("Test buy product 1")
 def test_buy_product_1(set_group):
     options = Options()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])

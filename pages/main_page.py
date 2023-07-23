@@ -1,11 +1,13 @@
 import time
 
+import allure
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilites.logger import Logger
 
 
 class  Main_page(Base):
@@ -17,7 +19,7 @@ class  Main_page(Base):
     select_manufacturer = "//*[@id='marka']/div/header/span"
     select_apple = "//*[@id='marka']/div/div/label[1]/span"
     select_apply = "//button[@class='btn btn--blue btn-main show-results']"
-    select_apple_watch = "//button[@id='bx_3966226736_blocks-78504_buy_link']"
+    select_apple_watch = "//button[@id='bx_3966226736_blocks-78503_buy_link']"
     select_cart = "//div[@id='basket']"
     select_checkout = "//*[@id='popup_basket']/div[3]/div/a"
 
@@ -85,17 +87,20 @@ class  Main_page(Base):
     """Выставление параметризированного поиска через фильтры каталога"""
 
     def select_product_1(self):
-        self.get_current_url()
-        self.click_select_menu_smart_watch()
-        self.click_select_smart_watch()
-        self.click_select_manufacturer()
-        self.click_select_apple()
-        self.click_select_apply()
-        time.sleep(5)
-        self.click_select_apple_watch()
-        time.sleep(5)
-        self.click_select_cart()
-        time.sleep(5)
+        with allure.step("select_product_1"):
+            Logger.add_start_step(method='select_product_1')
+            self.get_current_url()
+            self.click_select_menu_smart_watch()
+            self.click_select_smart_watch()
+            self.click_select_manufacturer()
+            self.click_select_apple()
+            self.click_select_apply()
+            time.sleep(5)
+            self.click_select_apple_watch()
+            time.sleep(5)
+            self.click_select_cart()
+            time.sleep(5)
+            Logger.add_end_step(url=self.driver.current_url, method='select_product_1')
 
 
 

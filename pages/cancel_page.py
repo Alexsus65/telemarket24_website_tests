@@ -1,10 +1,12 @@
 import time
 
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilites.logger import Logger
 
 
 class  Cancel_page(Base):
@@ -45,10 +47,13 @@ class  Cancel_page(Base):
     """Отмена заказа"""
 
     def deleting_order(self):
-        self.get_current_url()
-        self.click_orders()
-        self.click_cancel_order1()
-        self.click_cancel_order2()
-        self.get_screenshot()
+        with allure.step("deleting_order"):
+            Logger.add_start_step(method='deleting_order')
+            self.get_current_url()
+            self.click_orders()
+            self.click_cancel_order1()
+            self.click_cancel_order2()
+            self.get_screenshot()
+            Logger.add_end_step(url=self.driver.current_url, method='deleting_order')
 
 

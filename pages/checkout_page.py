@@ -1,10 +1,12 @@
 import time
 
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilites.logger import Logger
 
 
 class  Checkout_page(Base):
@@ -18,7 +20,6 @@ class  Checkout_page(Base):
     email = "//input[@id='soa-property-3']"
     phone = "//input[@id='soa-property-2']"
     onwards_4_button = "//*[@id='bx-soa-properties']/div[2]/div[3]/div/a[2]"
-    # model_word = "//*[@id='bx-soa-basket']/div[2]/div[1]/div/div/div/div[1]/div/div[2]/div/a"
     price_word = "//*[@id='bx-soa-basket']/div[2]/div[1]/div/div/div/div[3]/div[2]/strong/span[1]"
     onwards_5_button = "//div[@id='bx-soa-orderSave']/a"
 
@@ -93,27 +94,27 @@ class  Checkout_page(Base):
     """Оформление заказа"""
 
     def formalization(self):
-        self.get_current_url()
-        self.click_onwards_1_button()
-        time.sleep(2)
-        self.click_onwards_2_button()
-        time.sleep(2)
-        self.click_onwards_3_button()
-        time.sleep(2)
-        self.input_name("")
-        time.sleep(2)
-        self.input_email("")
-        time.sleep(2)
-        self.input_phone("9111131214")
-        time.sleep(2)
-        self.click_onwards_4_button()
-        time.sleep(2)
-        # self.assert_word(self.get_model_word(), "Часы Apple Watch Series 8 GPS 45mm Midnight  Aluminum Case/Midnight Sport Band (MNUJ3)")
-        # time.sleep(2)
-        self.assert_word(self.get_price_word(), "37 950")
-        time.sleep(2)
-        self.click_onwards_5_button()
-        time.sleep(2)
-        self.get_screenshot()
-
+        with allure.step("formalization"):
+            Logger.add_start_step(method='formalization')
+            self.get_current_url()
+            self.click_onwards_1_button()
+            time.sleep(2)
+            self.click_onwards_2_button()
+            time.sleep(2)
+            self.click_onwards_3_button()
+            time.sleep(2)
+            self.input_name("")
+            time.sleep(2)
+            self.input_email("")
+            time.sleep(2)
+            self.input_phone("9111131214")
+            time.sleep(2)
+            self.click_onwards_4_button()
+            time.sleep(2)
+            self.assert_word(self.get_price_word(), "37 040")
+            time.sleep(2)
+            self.click_onwards_5_button()
+            time.sleep(2)
+            self.get_screenshot()
+            Logger.add_end_step(url=self.driver.current_url, method='formalization')
 

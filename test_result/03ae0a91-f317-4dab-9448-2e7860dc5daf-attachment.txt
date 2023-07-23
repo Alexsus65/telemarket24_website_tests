@@ -1,0 +1,37 @@
+Enter system
+Start Test 1
+Current url https://telemarket24.ru/
+Click account menu
+Click inlet
+Input email
+Input password
+Click login
+Click account menu
+Good value word
+Current url https://telemarket24.ru/?login=yes
+Click select menu smart watch
+Click select smart watch
+Click select manufacturer
+Click select apple
+Click select apply
+Click select apple watch
+Click select cart
+Click select checkout
+Current url https://telemarket24.ru/personal/cart/
+Click checkout button
+Current url https://telemarket24.ru/personal/order/
+Click onwards 1 button
+Click onwards 2 button
+Click onwards 3 button
+Input name
+Input email
+Input phone
+Click onwards 4 button
+Good value word
+Click onwards 5 button
+Current url https://telemarket24.ru/personal/order/?ORDER_ID=579796
+Click orders
+Click cancel order1
+Click cancel order2
+Finish test 1
+Exit system
